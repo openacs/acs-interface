@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>ACS Interface Requirements</title>
+</head>
+<body bgcolor=white>
+
+<h2> ACS Interface Requirements <br>
+by khy@arsdigita.com </h2>
+<hr>
+
+<h3>
+I. Introduction </h3>
+This document explains the requirements for the ACS Interface application.  It details the rationale and use cases for this system. 
+
+<h3>
+II. Vision Statement </h3>
+
+Interfaces are represented by the combination of a name and a set of
+  methods.  Object types would implement these interfaces to either
+  register for services or to provide a more specific
+  implementation. For example, a 'person' object type could provide a
+  more specific implementation of 'is_available' then a generic
+  function that just checks out the attributes the person object type.
+<h3>
+III. System Overview</h3>
+
+Registration service - 
+<ul> 
+<li> 
+Facility for Services/Applications to register the interfaces (with methods and intended signtures)</li>
+<li> 
+Facility for Applications to register object types and what interfaces each object type supports.  </li>
+</ul>
+
+<h3>
+IV. Use-cases and User-scenarios</h3>
+<i>[to be filled in]</i>
+
+<h3>
+V. Related Links</h3>
+<i>[to be filled in]</i>
+
+<h3> 
+VI.A Registration Service Pages: </h3>
+
+   20.10 Interface Registration <br><br>
+   20.10.10 Add/Delete interface <br><br>
+   20.10.20 Add/Remove methods to/from interfaces <br><br>
+   20.10.30 Specify parameters for methods <br><br>
+   20.10.40 Edit paramters for methods <br><br>
+   20.10.50 List of interfaces <br><br>
+
+   20.20 Object type / Interface Registration  <br><br>
+   20.20.10 List of interfaces for object type <br><br>
+   20.20.20 Edit association between object type and interface <br><br>
+
+<h3>
+VI.B Registration API: </h3>
+   30.10 Interface Registration API <br><br>
+   30.10.10 Add/Delete interface <br><br>
+   30.10.20 Add/Remove methods from interfaces <br><br>
+   30.10.30 Add/Remove parameters from methods
+
+   30.20 Object type / Interface Registration <br><br>
+   30.20.10 Add/Remove association of object types to interfaces
+
+<h3>VII. Revision History</h3>
+
+<table cellpadding=2 cellspacing=2 width=90% bgcolor=#efefef>
+<tr bgcolor=#e0e0e0>
+    <th width=10%>Document Revision #</th>
+    <th width=50%>Action Taken, Notes</th>
+    <th>When?</th>
+    <th>By Whom?</th>
+</tr>
+
+<tr>
+   <td>0.2</td>
+   <td>Creation</td>
+   <td>2000/11/27</td>
+   <td>Khy Huang</td>
+</tr>
+
+<tr>
+   <td>0.1</td>
+   <td>Creation</td>
+   <td>2000/11/26</td>
+   <td>Khy Huang</td>
+</tr>
+
+<tr>
+  <td>0.2</td>
+  <td>Revision</td>
+  <td>2000/12/08</td>
+  <td>Joshua Finkler</td>
+</tr>
+
+</table>
+
+
+</body>
+</html>
+
