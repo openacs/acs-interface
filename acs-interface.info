@@ -21,9 +21,9 @@
 
         <files>
             <file type="package_spec" path="acs-interface.info"/>
-            <file type="data_model_create" path="sql/acs-interface-create.sql"/>
-            <file type="data_model_drop" path="sql/acs-interface-drop.sql"/>
-            <file type="data_model_upgrade" path="sql/upgrade-4.0.1b2-4.0.1b3.sql"/>
+            <file type="data_model_create" path="sql/oracle/acs-interface-create.sql"/>
+            <file type="data_model_drop" path="sql/oracle/acs-interface-drop.sql"/>
+            <file type="data_model_upgrade" path="sql/oracle/upgrade-4.0.1b2-4.0.1b3.sql"/>
             <file type="documentation" path="www/doc/design.html"/>
             <file type="documentation" path="www/doc/requirements.html"/>
         </files>
