@@ -134,10 +134,10 @@ as
 	creation_ip		in acs_interfaces.creation_ip%TYPE default null
     ) return acs_interfaces.interface_id%TYPE;
 
-    procedure delete (
+    procedure del (
 	interface_id		in acs_interfaces.interface_id%TYPE
     );
-    procedure delete (
+    procedure del (
 	interface_name		in acs_interfaces.interface_name%TYPE,
 	programming_language	in acs_interfaces.programming_language%TYPE
     );
@@ -252,17 +252,17 @@ as
 	return v_interface_id;
     end new;
 	
-    procedure delete (
+    procedure del (
 	interface_id	    in acs_interfaces.interface_id%TYPE
     ) 
     is 
     begin
 
 	delete from acs_interfaces
-	where interface_id = acs_interface.delete.interface_id;
-    end delete;   
+	where interface_id = acs_interface.del.interface_id;
+    end del;   
 
-    procedure delete (
+    procedure del (
 	interface_name		in acs_interfaces.interface_name%TYPE,
 	programming_language	in acs_interfaces.programming_language%TYPE
     )
@@ -270,12 +270,12 @@ as
 	v_interface_id	    integer;
     begin
 	delete from acs_interfaces
-	where interface_name = acs_interface.delete.interface_name 
-	and   programming_language = acs_interface.delete.programming_language;
+	where interface_name = acs_interface.del.interface_name 
+	and   programming_language = acs_interface.del.programming_language;
 
 	return;
 
-    end delete;	
+    end del;	
 
     procedure assoc_obj_type_with_interface (
 	interface_name		in acs_interfaces.interface_name%TYPE,
