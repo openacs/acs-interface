@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>ACS Interface Requirements</title>
+</head>
+<body bgcolor=white>
+
+<h2> ACS Interface Design </h2>
+<hr>
+
+<h3> 
+I. Essentials </h3>
+<ul>
+<li> 
+Requirements document: <a href="requirements">Requirements</a></li>
+<li> 
+Data Model: <a href="/doc/sql/display-sql?url=acs-interface-create.sql&package_key=acs-interface">acs-interface-create.sql</a></li>
+</ul>
+
+<h3> 
+II. Introduction </h3>
+
+Object subtyping incurs the overhead of inheriting the data of the super class.  In addition to this overhead, we are requiring the same underlying structure of the superclass to
+  execute a function on the object.  The ACS Interface package addresses this issue by only requiring object types to implement a set of specified methods.  Importantly, object
+  types that implement the interface are not required to have the same underlying structure.  ACS Interface also provides the additional functionality of allowing object types to
+  provide a more specific version of a method.  For example, a hashtable object type may want to check if the object it is placing into the hashtable has implemented the hashable
+  interface. If the object type has implemented the interface, then we could use the object method to get the hash value, otherwise use a general function to get the hash value. 
+  Similarly to the current relational object model, interfaces of this sort are not automatically inherited by their subtypes. 
+
+
+<h3>
+V. Design Tradeoffs </h3>
+
+
+n interface is a name together with a set of methods.  The datamodel only stores the information about the methods. The implementation is left to the developer in each
+  programming enviroment. In the ACS Interface datamodel, there is a language column for the interface. The language refers to the programming language.  The implementation
+  of the interface is specific to the programming environment. In the Oracle PL/SQL environment each object type has an associated package and interface methods are declared
+  and defined within the packages. Thus calling get_hashvalue on an object type would appear as:  'object_type.get_hashvalue()'.  In the TCL environment, a way of handling
+  interface is the use of namespace, which resolves the collisions of naming object types and methods. For Java, interfaces are are standard. 
+
+  Another solution would be to retrieve the signature of the procedure by querying the data dictionary of the database for the object type packages in Oracle (Namespace in Tcl).
+  The problem is that we don't know what the intended functionality of the procedure was, even though the procedure had a matching signature (method name and parameter
+  specifications). When an object type implements an interface, it agrees to implement the methods with their intended functionalities. 
+
+<h3> 
+VI. API </h3>
+
+All the procedures are defined into the acs_interface package. The methods are calls to describe the interface:
+
+<ul>
+  <li> new  - add new methods
+  <li> delete - remove interface
+  <li> associate_object_interface - object type implements interface
+  <li> remove_obj_type_impl - remove object type provides interface implementation.
+  <li> add_method - add new method to a interface
+  <li> add_param_to_method - add parameter to a method
+  <li> remove_method - remove method from interface
+  <li> remove_param_from_method - remove parameter from method
+  <li> obj_provide_implement - another package provides the implementation for this object type 
+</ul>
+ 
+
+<h3>VII. Data Model Discussion 
+</h3>
+The datamode consist of four tables to describe the interface, methods, parameters, and object type and interface association.
+
+<ul>
+   <li> acs_interface - name and language of the interface 
+   <li> acs_interface_methods - methods defined for a interface
+   <li> acs_interface_method_params - parameters for the method
+   <li> acs_interface_obj_type_map -  object types to interfaces
+</ul>
+
+
+<h3>X. Future Improvements / Areas of Likely Change</h3>
+<ul>
+    <li> A front end to view the interface meta data
+</ul>
+
+<h3>XI. Authors</h3>
+<ul>
+   <li> Khy Huang 
+</ul>
+
+<h3> XII. Revision History </h3>
+<table cellpadding=2 cellspacing=2 width=90% bgcolor=#efefef>
+<tr bgcolor=#e0e0e0>
+    <th width=10%>Document Revision #</th>
+    <th width=50%>Action Taken, Notes</th>
+    <th>When?</th>
+    <th>By Whom?</th>
+</tr>
+
+<tr>
+   <td>0.2</td>
+   <td>Edit</td>
+   <td>11/27/2000</td>
+   <td>Josh Finkler</td>
+</tr>
+
+<tr>
+   <td>0.1</td>
+   <td>Creation</td>
+   <td>11/27/2000</td>
+   <td>Khy Huang</td>
+</tr>
+</table>
+<p>
+<hr>
+
+<a href="mailto:khy@arsdigita.com">khy@arsdigita.com</a> <br>
+</body>
+</html>
+
+
+
+
