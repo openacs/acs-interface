@@ -6,7 +6,7 @@
     <pretty-plural>ACS Interfaces</pretty-plural>
     <singleton-p>t</singleton-p>
 
-    <version name="4.0.1" url="http://www.arsdigita.com/acs-repository/download/apm/acs-interface-4.0.1.apm">
+    <version name="5.0d1" url="http://www.arsdigita.com/acs-repository/download/apm/acs-interface-5.0d1.apm">
         <database-support>
              <database>oracle</database>
         </database-support>
@@ -16,7 +16,7 @@
         <vendor url="http://www.arsdigita.com/">ArsDigita Corporation</vendor>
         <description format="text/html">Define interfaces for object types.  Used by Site Wide Search.</description>
 
-        <provides url="acs-interface" version="4.0.1"/>
+        <provides url="acs-interface" version="5.0d1"/>
         <requires url="acs-kernel" version="4.6.2"/>
 
         <files>
