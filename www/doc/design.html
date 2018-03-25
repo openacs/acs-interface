@@ -32,7 +32,7 @@ V. Design Tradeoffs </h3>
 
 
 n interface is a name together with a set of methods.  The datamodel only stores the information about the methods. The implementation is left to the developer in each
-  programming enviroment. In the ACS Interface datamodel, there is a language column for the interface. The language refers to the programming language.  The implementation
+  programming environment. In the ACS Interface datamodel, there is a language column for the interface. The language refers to the programming language.  The implementation
   of the interface is specific to the programming environment. In the Oracle PL/SQL environment each object type has an associated package and interface methods are declared
   and defined within the packages. Thus calling get_hashvalue on an object type would appear as:  'object_type.get_hashvalue()'.  In the TCL environment, a way of handling
   interface is the use of namespace, which resolves the collisions of naming object types and methods. For Java, interfaces are are standard. 
